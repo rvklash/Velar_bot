@@ -1,4 +1,3 @@
-
 import logging
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
@@ -25,10 +24,10 @@ async def srok(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("азаттык", azattyq))
-    app.add_handler(CommandHandler("ипотека", ipoteka))
-    app.add_handler(CommandHandler("коммерция", kommerciya))
-    app.add_handler(CommandHandler("срок", srok))
+    app.add_handler(CommandHandler("azattyq", azattyq))         # ← заменено
+    app.add_handler(CommandHandler("ipoteka", ipoteka))         # ← заменено
+    app.add_handler(CommandHandler("kommerciya", kommerciya))   # ← заменено
+    app.add_handler(CommandHandler("srok", srok))               # ← заменено
     app.run_polling()
 
 if __name__ == "__main__":
