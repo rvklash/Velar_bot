@@ -2,7 +2,7 @@ import logging
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-TOKEN = "7899349810:AAGJDV3ulWW2ic_0KrTNx1jdxc4ZNsm1fM4"
+TOKEN = "7899349810:AAFLpGymc7P9FtJusgLyNqYekATuZJc3PAU"
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -24,11 +24,12 @@ async def srok(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 def main():
     app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("azattyq", azattyq))         # ← заменено
-    app.add_handler(CommandHandler("ipoteka", ipoteka))         # ← заменено
-    app.add_handler(CommandHandler("kommerciya", kommerciya))   # ← заменено
-    app.add_handler(CommandHandler("srok", srok))               # ← заменено
+    app.add_handler(CommandHandler("azattyq", azattyq))
+    app.add_handler(CommandHandler("ipoteka", ipoteka))
+    app.add_handler(CommandHandler("kommerciya", kommerciya))
+    app.add_handler(CommandHandler("srok", srok))
     app.run_polling()
 
 if __name__ == "__main__":
     main()
+
